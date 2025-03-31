@@ -1,0 +1,23 @@
+
+# macOS system files
+.DS_Store
+
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Jupyter/IPython checkpoints
+.ipynb_checkpoints/
+
+# Model weights
+*.pth
+
+# VSCode settings (optional)
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
+
+# Duplicate files
+README (1).md
