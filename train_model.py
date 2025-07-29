@@ -16,11 +16,11 @@ import pandas as pd
 # Data Preparation
 # -----------------------------
 direct_list = 'Data/'
-file_list = ['slab_1.h5', 'slab_2.h5', 'slab_3.h5']
+file_list = ['slab_1.h5', 'slab_2.h5', 'slab_3.h5', 'slab_4.h5', 'slab_5.h5', 'slab_6.h5', 'slab_7.h5']
 file_list = [direct_list + i for i in file_list]
 
 Raw_data = RawLoader(file_list, start_freq=10, end_freq=200)
-Data_x = np.array(Raw_data.fea_spec_temp_logage_NB())  # Features: RC only, with Temp + log(Age)
+Data_x = np.array(Raw_data.fea_spec_temp_logage())  # Features: RC only, with Temp + log(Age)
 Data_y = np.array(Raw_data.Label)                      # Target: Compressive Strength
 
 # -----------------------------
@@ -32,13 +32,13 @@ device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cp
 # Hyperparameter Search Space
 # -----------------------------
 hyperparameters_space = {
-    'learning_rate': [0.001, 0.0005, 0.0001],                 
-    'optimizer': ['Adam', 'SGD'],                             
-    'batch_size': [16, 32, 64],                              
-    'conv1_out_channels': [32, 64, 128],                     
-    'conv2_out_channels': [64, 128, 256],                    
-    'linear1_out_features': [32, 64, 128],                    
-    'linear2_out_features': [16, 32, 64]                     
+    'learning_rate': [0.0005],                 
+    'optimizer': ['Adam'],                             
+    'batch_size': [16],                              
+    'conv1_out_channels': [64],                     
+    'conv2_out_channels': [128],                    
+    'linear1_out_features': [64],                    
+    'linear2_out_features': [32]                     
 }
 
 
