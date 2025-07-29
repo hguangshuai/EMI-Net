@@ -21,3 +21,6 @@ __pycache__/
 
 # Duplicate files
 README (1).md
+
+# Results files
+*.csv
