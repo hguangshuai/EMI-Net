@@ -85,6 +85,8 @@ pytorch-ignite
 
 Model training results may slightly differ between CPU and GPU due to differences in floating point computation precision and parallelization behavior. These variations are typically minor.
 
+**Performance Note:** When using all data with LS40S GPU for training, the test set MAE is around 1.91.
+
 ---
 
 ## 🛠 Usage
