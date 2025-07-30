@@ -16,7 +16,7 @@ import pandas as pd
 # Data Preparation
 # -----------------------------
 direct_list = 'Data/'
-file_list = ['slab_1.h5', 'slab_2.h5', 'slab_3.h5', 'slab_4.h5', 'slab_5.h5', 'slab_6.h5', 'slab_7.h5']
+file_list = ['CAI_data.h5']
 file_list = [direct_list + i for i in file_list]
 
 Raw_data = RawLoader(file_list, start_freq=10, end_freq=200)
